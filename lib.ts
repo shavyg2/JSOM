@@ -491,7 +491,7 @@ export class JSOM {
     }
 
 
-    static Parse(jsom:string,object:any){
+    static parse(jsom:string,object:any){
         if(object){
             let tokens = tokenizer(jsom)
             let nodes = LexerAnalysis(tokens);

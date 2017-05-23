@@ -32,5 +32,5 @@ export declare function LexerAnalysis(tokens: Token[]): Node;
 export declare function Lexer(node: Node, object: any): any;
 export declare class JSOM {
     constructor();
-    static Parse(jsom: string, object: any): any;
+    static parse(jsom: string, object: any): any;
 }

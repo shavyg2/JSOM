@@ -362,7 +362,7 @@ var JSOM = (function () {
     function JSOM() {
         throw new Error("Cannot instanciate a static class");
     }
-    JSOM.Parse = function (jsom, object) {
+    JSOM.parse = function (jsom, object) {
         if (object) {
             var tokens = tokenizer(jsom);
             var nodes = LexerAnalysis(tokens);

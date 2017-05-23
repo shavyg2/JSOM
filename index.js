@@ -1,32 +1,13 @@
 "use strict";
-//This will force the user to only use the settings that i want them to use.
 Object.defineProperty(exports, "__esModule", { value: true });
-function queryParser(query) {
-    function rip(query) {
-        if (typeof query === "string") {
-            if (~query.indexOf(",")) {
-                return query.split(",").map(rip);
-            }
-            if (~query.indexOf(".")) {
-                return query.split(".").map(rip);
-            }
-        }
-        return query;
-    }
-    return rip(query);
+var lib_1 = require("./lib");
+exports.JSOM = lib_1.JSOM;
+var lib_2 = require("./lib");
+exports.default = lib_2.JSOM;
+function parse(jsom, object) {
+    var tokens = lib_2.tokenizer(jsom);
+    var nodes = lib_2.LexerAnalysis(tokens);
+    return lib_2.Lexer(nodes, object);
 }
-exports.queryParser = queryParser;
-function PickOperator(config, object) {
-    function InternalOperation(config, object) {
-        var keys = Object.keys(config);
-        var array_start;
-    }
-}
-exports.PickOperator = PickOperator;
-function Pick(config) {
-    return function (object) {
-        return PickOperator(config, object);
-    };
-}
-exports.Pick = Pick;
+exports.parse = parse;
 //# sourceMappingURL=index.js.map

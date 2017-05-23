@@ -1,6 +1,4 @@
-export declare type configSetting = {
-    [key: string]: (configSetting | string | (() => any));
-};
-export declare function queryParser(query: string): any;
-export declare function PickOperator(config: configSetting, object: any): void;
-export declare function Pick(config: configSetting): (object: any) => void;
+export { JSOM } from './lib';
+import { JSOM } from './lib';
+export default JSOM;
+export declare function parse(jsom: string, object: any): any;
